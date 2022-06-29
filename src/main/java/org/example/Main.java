@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         Connection conn=null;
         PreparedStatement stmt = null;
@@ -14,19 +14,11 @@ public class Main {
         String n;
         Statement s1=null;
         String sql="insert into ninth (rollNo, FullName,FatherName, Address, dob, english, hindi, maths, science,  social,  percentage) values( ?,?,?,?,?,?,?,?,?,?,?)";
-
-
-        try {
             Class.forName("org.postgresql.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        conn = DriverManager
+                conn = DriverManager
                 .getConnection("jdbc:postgresql://localhost:5432/students",
                         "postgres", "isha@123");
-        System.out.println("Opened database successfully");
-
-
+                System.out.println("Opened database successfully");
              //stmt = conn.createStatement();
 
             // TABLE CREATED String sql = "CREATE TABLE Ninth (rollNo INT PRIMARY KEY NOT NULL, FullName varchar(50) not null, FatherName varchar(50) not null, Address varchar(50) not null, dob varchar(50) not null, english float not null, hindi float not null, maths float not null, science float not null, social float
@@ -76,7 +68,6 @@ public class Main {
                    stmt.setFloat(11, per);
                    int row = stmt.executeUpdate();
                    System.out.println(row + "INSERTED");
-
                    stmt.close();
 
                } else if (c.startsWith("d"))
@@ -99,8 +90,7 @@ public class Main {
                            } else {
                                System.out.println("Error OCCURED OR DATA NOT EXIST!!!!");
                            }
-                       }
-                       st.close();
+                       }st.close();
                    }
                } //READ DATA
                 else if (c.startsWith("s")) {
@@ -109,7 +99,6 @@ public class Main {
                    ResultSet rs = s1.executeQuery(se);
                    if(rs.next()){
                        //Display values
-
                        System.out.print("Roll-No:" + rs.getInt("rollno")+" ");
                        System.out.print(", Name: " + rs.getString("fullname")+" ");
                        System.out.print(", Father's name: " + rs.getString("fathername"));
@@ -121,30 +110,21 @@ public class Main {
                        System.out.print(",Social Science: " + rs.getFloat("social")+" ");
                        System.out.print(",Percentage: " + rs.getFloat("percentage")+" ");
                        System.out.println(" ");
-
-
                    }
                    else {
                        System.out.println("RECORD NOT EXIST!!");
                    }
                    rs.close();
                    s1.close();
-               }
-
-
-               else {
-
+               } else {
                    System.out.println("Do you want to continue:=y/n");
                    n = sc.nextLine();
                    if (n.startsWith("n")) {
                        break;
                    }
                }
-
            }while(true);
-
         System.out.println("Process SuccessFull");
         conn.close();
-
     }
 }
