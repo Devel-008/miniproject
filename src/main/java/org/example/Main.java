@@ -1,8 +1,6 @@
 package org.example;
 import java.lang.*;
 import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.util.Scanner;
 
 public class Main {
@@ -21,8 +19,7 @@ public class Main {
                 System.out.println("Opened database successfully");
              //stmt = conn.createStatement();
 
-            // TABLE CREATED String sql = "CREATE TABLE Ninth (rollNo INT PRIMARY KEY NOT NULL, FullName varchar(50) not null, FatherName varchar(50) not null, Address varchar(50) not null, dob varchar(50) not null, english float not null, hindi float not null, maths float not null, science float not null, social float
-            // not null, percentage float not null);  ";
+            // TABLE CREATED -->> String sql = "CREATE TABLE Ninth (rollNo INT PRIMARY KEY NOT NULL, FullName varchar(50) not null, FatherName varchar(50) not null, Address varchar(50) not null, dob varchar(50) not null, english float not null, hindi float not null, maths float not null, science float not null, social float not null, percentage float not null);  ";
 
             Scanner sc=new Scanner(System.in);
            do {

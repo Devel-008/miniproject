@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aliens [
+        <!ELEMENT aliens (alien)*>
+        <!ELEMENT alien (name,salary)>
+        <!ATTLIST alien
+                aid CDATA #REQUIRED
+                lang CDATA #REQUIRED>
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT salary (#PCDATA)>
+        ]>
+<aliens>
+    <alien aid="1" lang="JAVA">
+        <name>Isha Sethia</name>
+        <salary>10000</salary>
+    </alien>
+    <alien aid="2" lang="JS">
+        <name>Pratibha Soni</name>
+        <salary>8000</salary>
+    </alien>
+    <alien aid="3" lang="JS">
+        <name>Bhawna Jain</name>
+        <salary>5000</salary>
+    </alien>
+</aliens>

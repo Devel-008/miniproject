@@ -1,0 +1,29 @@
+[
+  {
+    "firstName": "David",
+    "lastName": "Gibbs",
+    "designation": "Manager",
+    "age": 24,
+    "gender": "man",
+    "address":
+    "126 San Jone CA 394221"
+  },
+  {
+  "firstName": "Ron",
+  "lastName": "Johnson",
+  "designation": "Developer",
+  "age": 23,
+    "gender": "man",
+    "address":
+    "126 San Jone CA 394221"
+  },
+  {
+    "firstName": "Leo",
+    "lastName": "Sames",
+    "designation": "Designer",
+    "age": 22,
+    "gender": "man",
+    "address":
+    "126 San Jone CA 394221"
+
+ }]

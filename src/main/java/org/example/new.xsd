@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="aliens" type="aliensType"/>
+  <xs:complexType name="alienType">
+    <xs:sequence>
+      <xs:element name="name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="Isha Sethia"/>
+            <xs:enumeration value="Pratibha Soni"/>
+            <xs:enumeration value="Bhawna Jain"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="salary">
+        <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:enumeration value="10000"/>
+            <xs:enumeration value="8000"/>
+            <xs:enumeration value="5000"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="aid" use="required"/>
+    <xs:attribute type="xs:string" name="lang" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="aliensType">
+    <xs:sequence>
+      <xs:element type="alienType" name="alien" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

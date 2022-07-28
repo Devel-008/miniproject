@@ -9,6 +9,9 @@ public class Jackson extends JsonFactory {
     private String brand=null;
     private int doors=0;
 
+
+
+
     public String getBrand()
     {
         return this.brand;
@@ -25,6 +28,7 @@ public class Jackson extends JsonFactory {
     {
         this.doors=doors;
     }
+
 
     public static void main(String[] args) {
         ObjectMapper om= new ObjectMapper();
